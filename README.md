@@ -1,5 +1,6 @@
 ## Sub-directories include:
-- Nuclei images for quality control and quantification (available upon request - many large files still trying to load on to github!)
+- Nuclei images for quality control and quantification
+	- adult data available upon request - many large files still trying to load on to github!
 - TapeStation nucleotide quality control electropherograms throughout Parse BioSciences Mega Kit barcoding and sequencing assay
 - Kallisto Bustools summary outputs for raw read cleaning and pseudo-alignment
 - (Adult data only) EnTAP functional annotation of coding sequence fasta file output from Kallisto Bustools
