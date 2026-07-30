@@ -1,0 +1,2 @@
+	GO	term	class	p	p_corr	n_genes	n_study	n_go	study_genes
+0	GO:0004867	serine-type endopeptidase inhibitor activity	molecular_function	1.166664241342913e-05	0.022493286573091364	4	88	32	['LOC145248905', 'LOC145248906', 'LOC145248907', 'LOC145248713']

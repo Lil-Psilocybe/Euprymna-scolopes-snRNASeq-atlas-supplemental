@@ -1,0 +1,14 @@
+{
+	"n_targets": 1,
+	"n_bootstraps": 0,
+	"n_processed": 1591214822,
+	"n_pseudoaligned": 1591214822,
+	"n_unique": 1591214822,
+	"p_pseudoaligned": 100.0,
+	"p_unique": 100.0,
+	"kallisto_version": "0.51.1",
+	"index_version": 13,
+	"k-mer length": 3,
+	"start_time": "Sat Jan 24 14:23:12 2026",
+	"call": "/home/FCAM/jbriseno/miniconda3/envs/kb_env/lib/python3.14/site-packages/kb_python/bins/linux/kallisto/kallisto bus -i 3mers.idx -o /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads// -x 1,10,18,1,30,38,1,50,58:1,0,10:0,0,0 -t 8 --num /seqdata/CGI/Fastq_Files/Spencer_Nyholm/Briseno_10Parse-Mega_03Dec2025/concatenated_reads/sublib-19_S9_L004_R1_001.fastq.gz /seqdata/CGI/Fastq_Files/Spencer_Nyholm/Briseno_10Parse-Mega_03Dec2025/concatenated_reads/sublib-19_S9_L004_R2_001.fastq.gz"
+}

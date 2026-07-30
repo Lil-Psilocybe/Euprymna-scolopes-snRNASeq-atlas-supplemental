@@ -1,0 +1,38 @@
+{
+    "workdir": "/labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads",
+    "version": "0.29.5",
+    "kallisto": {
+        "path": "/home/FCAM/jbriseno/miniconda3/envs/kb_env/lib/python3.14/site-packages/kb_python/bins/linux/kallisto/kallisto",
+        "version": "0.51.1"
+    },
+    "bustools": {
+        "path": "/home/FCAM/jbriseno/miniconda3/envs/kb_env/lib/python3.14/site-packages/kb_python/bins/linux/bustools/bustools",
+        "version": "0.45.1"
+    },
+    "start_time": "2026-04-16T04:51:50.477512",
+    "end_time": "2026-04-16T06:21:33.528288",
+    "elapsed": 5383.050776,
+    "call": "/home/FCAM/jbriseno/miniconda3/envs/kb_env/bin/kb count -x 1,10,18,1,30,38,1,50,58:1,0,10:0,0,0 -w splitseqv3_barcodes.txt -r splitseqv3_replace.txt -i 3mers.idx -g 3mers.t2g -o . --num /seqdata/CGI/Fastq_Files/JBriseno_16scRNA_Mar2026//sublib_14_R1.fastq.gz /seqdata/CGI/Fastq_Files/JBriseno_16scRNA_Mar2026//sublib_14_R2.fastq.gz --overwrite",
+    "commands": [
+        "kallisto bus -i 3mers.idx -o . -x 1,10,18,1,30,38,1,50,58:1,0,10:0,0,0 -t 8 --num /seqdata/CGI/Fastq_Files/JBriseno_16scRNA_Mar2026//sublib_14_R1.fastq.gz /seqdata/CGI/Fastq_Files/JBriseno_16scRNA_Mar2026//sublib_14_R2.fastq.gz",
+        "bustools sort -o ./tmp/output.s.bus -T ./tmp -t 8 -m 2G --no-flags ./output.bus",
+        "bustools inspect -o ./inspect.json -w splitseqv3_barcodes.txt ./tmp/output.s.bus",
+        "bustools correct -o ./tmp/output.s.c.bus -w splitseqv3_barcodes.txt ./tmp/output.s.bus",
+        "bustools sort -o ./output.unfiltered.bus -T ./tmp -t 8 -m 2G ./tmp/output.s.c.bus",
+        "bustools count -o ./counts_unfiltered/cells_x_genes -g 3mers.t2g -e ./matrix.ec -t ./transcripts.txt --genecounts --umi-gene ./output.unfiltered.bus",
+        "bustools correct -o ./tmp/output.unfiltered.c.bus -w splitseqv3_replace.txt ./output.unfiltered.bus --replace",
+        "bustools sort -o ./output_modified.unfiltered.bus -T ./tmp -t 8 -m 2G ./tmp/output.unfiltered.c.bus",
+        "bustools count -o ./counts_unfiltered_modified/cells_x_genes -g 3mers.t2g -e ./matrix.ec -t ./transcripts.txt --genecounts --umi-gene ./output_modified.unfiltered.bus"
+    ],
+    "runtimes": [
+        3878.057948112488,
+        474.061452627182,
+        128.7910439968109,
+        119.89308786392212,
+        291.41491770744324,
+        73.15569472312927,
+        71.36636900901794,
+        271.20725417137146,
+        72.75535178184509
+    ]
+}

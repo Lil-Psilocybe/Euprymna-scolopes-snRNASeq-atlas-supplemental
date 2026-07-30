@@ -1,0 +1,38 @@
+{
+    "workdir": "/labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads",
+    "version": "0.29.5",
+    "kallisto": {
+        "path": "/home/FCAM/jbriseno/miniconda3/envs/kb_env/lib/python3.14/site-packages/kb_python/bins/linux/kallisto/kallisto",
+        "version": "0.51.1"
+    },
+    "bustools": {
+        "path": "/home/FCAM/jbriseno/miniconda3/envs/kb_env/lib/python3.14/site-packages/kb_python/bins/linux/bustools/bustools",
+        "version": "0.45.1"
+    },
+    "start_time": "2026-01-22T20:07:30.809997",
+    "end_time": "2026-01-22T22:14:06.299992",
+    "elapsed": 7595.489995,
+    "call": "/home/FCAM/jbriseno/miniconda3/envs/kb_env/bin/kb count -x 1,10,18,1,30,38,1,50,58:1,0,10:0,0,0 -w splitseqv3_barcodes.txt -r splitseqv3_replace.txt -i 3mers.idx -g 3mers.t2g -o /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads// --num /seqdata/CGI/Fastq_Files/Spencer_Nyholm/Briseno_10Parse-Mega_03Dec2025/concatenated_reads/sublib-3_S3_L004_R1_001.fastq.gz /seqdata/CGI/Fastq_Files/Spencer_Nyholm/Briseno_10Parse-Mega_03Dec2025/concatenated_reads/sublib-3_S3_L004_R2_001.fastq.gz --overwrite",
+    "commands": [
+        "kallisto bus -i 3mers.idx -o /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads// -x 1,10,18,1,30,38,1,50,58:1,0,10:0,0,0 -t 8 --num /seqdata/CGI/Fastq_Files/Spencer_Nyholm/Briseno_10Parse-Mega_03Dec2025/concatenated_reads/sublib-3_S3_L004_R1_001.fastq.gz /seqdata/CGI/Fastq_Files/Spencer_Nyholm/Briseno_10Parse-Mega_03Dec2025/concatenated_reads/sublib-3_S3_L004_R2_001.fastq.gz",
+        "bustools sort -o /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//tmp/output.s.bus -T /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//tmp -t 8 -m 2G --no-flags /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//output.bus",
+        "bustools inspect -o /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//inspect.json -w splitseqv3_barcodes.txt /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//tmp/output.s.bus",
+        "bustools correct -o /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//tmp/output.s.c.bus -w splitseqv3_barcodes.txt /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//tmp/output.s.bus",
+        "bustools sort -o /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//output.unfiltered.bus -T /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//tmp -t 8 -m 2G /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//tmp/output.s.c.bus",
+        "bustools count -o /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//counts_unfiltered/cells_x_genes -g 3mers.t2g -e /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//matrix.ec -t /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//transcripts.txt --genecounts --umi-gene /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//output.unfiltered.bus",
+        "bustools correct -o /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//tmp/output.unfiltered.c.bus -w splitseqv3_replace.txt /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//output.unfiltered.bus --replace",
+        "bustools sort -o /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//output_modified.unfiltered.bus -T /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//tmp -t 8 -m 2G /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//tmp/output.unfiltered.c.bus",
+        "bustools count -o /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//counts_unfiltered_modified/cells_x_genes -g 3mers.t2g -e /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//matrix.ec -t /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//transcripts.txt --genecounts --umi-gene /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//output_modified.unfiltered.bus"
+    ],
+    "runtimes": [
+        6559.670925617218,
+        322.65216636657715,
+        100.53579354286194,
+        61.38085579872131,
+        194.45380520820618,
+        62.40353536605835,
+        44.96127152442932,
+        186.14022016525269,
+        60.78178119659424
+    ]
+}

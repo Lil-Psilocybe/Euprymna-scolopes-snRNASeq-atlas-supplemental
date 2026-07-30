@@ -1,0 +1,38 @@
+{
+    "workdir": "/home/FCAM/jbriseno/JB_Nyholm_Lab/cleaned_fastqs_tmp/adult_atlas_kb_cleaned_fastqs",
+    "version": "0.29.5",
+    "kallisto": {
+        "path": "/home/FCAM/jbriseno/miniconda3/envs/kb_env/lib/python3.14/site-packages/kb_python/bins/linux/kallisto/kallisto",
+        "version": "0.51.1"
+    },
+    "bustools": {
+        "path": "/home/FCAM/jbriseno/miniconda3/envs/kb_env/lib/python3.14/site-packages/kb_python/bins/linux/bustools/bustools",
+        "version": "0.45.1"
+    },
+    "start_time": "2026-04-13T12:46:55.979378",
+    "end_time": "2026-04-13T13:20:07.768069",
+    "elapsed": 1991.788691,
+    "call": "/home/FCAM/jbriseno/miniconda3/envs/kb_env/bin/kb count -x 1,10,18,1,30,38,1,50,58:1,0,10:0,0,0 -w /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//splitseqv3_barcodes.txt -r /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//splitseqv3_replace.txt -i /labs/Nyholm/Es_V3_Genome/GCF_053919585.1/Es_V3_kb_index//Es_adult_index.idx -g /labs/Nyholm/Es_V3_Genome/GCF_053919585.1/Es_V3_kb_index//t2g.txt -c1 /labs/Nyholm/Es_V3_Genome/GCF_053919585.1/Es_V3_kb_index//cdna_t2c.txt -c2 /labs/Nyholm/Es_V3_Genome/GCF_053919585.1/Es_V3_kb_index//intron_t2c.txt --h5ad --sum=nucleus --num -t 24 -m 400G --report -o /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb --overwrite Cleaned_SL2_R1.fastq.gz Cleaned_SL2_R2.fastq.gz",
+    "commands": [
+        "kallisto bus -i /labs/Nyholm/Es_V3_Genome/GCF_053919585.1/Es_V3_kb_index//Es_adult_index.idx -o /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb -x 1,10,18,1,30,38,1,50,58:1,0,10:0,0,0 -t 24 --num Cleaned_SL2_R1.fastq.gz Cleaned_SL2_R2.fastq.gz",
+        "bustools sort -o /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/tmp/output.s.bus -T /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/tmp -t 24 -m 400G --no-flags /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/output.bus",
+        "bustools inspect -o /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/inspect.json -w /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//splitseqv3_barcodes.txt /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/tmp/output.s.bus",
+        "bustools correct -o /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/tmp/output.s.c.bus -w /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//splitseqv3_barcodes.txt /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/tmp/output.s.bus",
+        "bustools sort -o /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/output.unfiltered.bus -T /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/tmp -t 24 -m 400G /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/tmp/output.s.c.bus",
+        "bustools count -o /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/counts_unfiltered/cells_x_genes -g /labs/Nyholm/Es_V3_Genome/GCF_053919585.1/Es_V3_kb_index//t2g.txt -e /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/matrix.ec -t /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/transcripts.txt --genecounts --umi-gene /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/output.unfiltered.bus",
+        "bustools correct -o /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/tmp/output.unfiltered.c.bus -w /labs/Nyholm/scsnRNASeq/sn_kb_cleaned_reads//splitseqv3_replace.txt /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/output.unfiltered.bus --replace",
+        "bustools sort -o /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/output_modified.unfiltered.bus -T /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/tmp -t 24 -m 400G /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/tmp/output.unfiltered.c.bus",
+        "bustools count -o /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/counts_unfiltered_modified/cells_x_genes -g /labs/Nyholm/Es_V3_Genome/GCF_053919585.1/Es_V3_kb_index//t2g.txt -e /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/matrix.ec -t /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/transcripts.txt --genecounts --umi-gene /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL2_kb/output_modified.unfiltered.bus"
+    ],
+    "runtimes": [
+        1220.1274399757385,
+        201.74173140525818,
+        11.218120098114014,
+        14.812412738800049,
+        178.11363124847412,
+        78.95870232582092,
+        13.730562925338745,
+        179.20966792106628,
+        80.25875067710876
+    ]
+}

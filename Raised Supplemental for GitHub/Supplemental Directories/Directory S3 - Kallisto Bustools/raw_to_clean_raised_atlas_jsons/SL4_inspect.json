@@ -1,0 +1,16 @@
+{
+	"numRecords": 1483193102,
+	"numReads": 1770728698,
+	"numBarcodes": 265206283,
+	"medianReadsPerBarcode": 1.000000,
+	"meanReadsPerBarcode": 6.676798,
+	"numUMIs": 1048576,
+	"numBarcodeUMIs": 1483193102,
+	"medianUMIsPerBarcode": 1.000000,
+	"meanUMIsPerBarcode": 5.592602,
+	"gtRecords": 1102808530,
+	"numBarcodesOnOnlist": 96,
+	"percentageBarcodesOnOnlist": 0.000036,
+	"numReadsOnOnlist": 42797,
+	"percentageReadsOnOnlist": 0.002417
+}

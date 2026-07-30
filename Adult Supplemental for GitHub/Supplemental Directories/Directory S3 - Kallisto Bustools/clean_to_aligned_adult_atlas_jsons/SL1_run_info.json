@@ -1,0 +1,14 @@
+{
+	"n_targets": 707050,
+	"n_bootstraps": 0,
+	"n_processed": 426162273,
+	"n_pseudoaligned": 291308847,
+	"n_unique": 4368843,
+	"p_pseudoaligned": 68.4,
+	"p_unique": 1.0,
+	"kallisto_version": "0.51.1",
+	"index_version": 13,
+	"k-mer length": 31,
+	"start_time": "Mon Apr 13 12:02:32 2026",
+	"call": "/home/FCAM/jbriseno/miniconda3/envs/kb_env/lib/python3.14/site-packages/kb_python/bins/linux/kallisto/kallisto bus -i /labs/Nyholm/Es_V3_Genome/GCF_053919585.1/Es_V3_kb_index//Es_adult_index.idx -o /labs/Nyholm/scsnRNASeq/adult_atlas_kb//SL1_kb -x 1,10,18,1,30,38,1,50,58:1,0,10:0,0,0 -t 24 --num Cleaned_SL1_R1.fastq.gz Cleaned_SL1_R2.fastq.gz"
+}
