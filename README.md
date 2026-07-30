@@ -1,5 +1,3 @@
-# This repository contains supplemental tables and datasets from single-nucleus (sn) RNA-Seq atlases of adult wild-caught and mid-adult lab-reared E. scolopes tissue samples.
-
 ## Sub-directories include:
 - Nuclei images for quality control and quantification (available upon request - many large files still trying to load on to github!)
 - TapeStation nucleotide quality control electropherograms throughout Parse BioSciences Mega Kit barcoding and sequencing assay
