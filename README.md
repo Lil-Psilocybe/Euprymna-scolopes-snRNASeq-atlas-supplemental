@@ -1,6 +1,6 @@
-This repository contains supplemental tables and datasets from single-nucleus (sn) RNA-Seq atlases of adult wild-caught and mid-adult lab-reared E. scolopes tissue samples.
+# This repository contains supplemental tables and datasets from single-nucleus (sn) RNA-Seq atlases of adult wild-caught and mid-adult lab-reared E. scolopes tissue samples.
 
-Sub-directories include:
+## Sub-directories include:
 - Nuclei images for quality control and quantification (available upon request - many large files still trying to load on to github!)
 - TapeStation nucleotide quality control electropherograms throughout Parse BioSciences Mega Kit barcoding and sequencing assay
 - Kallisto Bustools summary outputs for raw read cleaning and pseudo-alignment
@@ -9,7 +9,7 @@ Sub-directories include:
 - GOATools gene ontology results tables from both pseudo-bulk and single-nucleus differential expression results
 - Scanpy cluster-cluster single-nucleus differential expression results tables 
 
-Sub-tables include:
+## Sub-tables include:
 - Annotation tables of hand-picked genes of interest and differentially expressed genes (DEGs) from various comparisons and figures (i.e. top DEGs in cluster 1, top DEGs in female white bodies, in APO white bodies etc.)
 	- contains gene ID in latest reference assembly, eggNOG-annotated gene descriptions, NCBI gene names, link to NCBI entry and (some) links to GeneCards annotation database
 - Parse sample loading tables for Day 1 Barcoding
